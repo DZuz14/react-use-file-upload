@@ -27,7 +27,7 @@ const getTotalSizeInBytes = (files: File[]): number => {
 /**
  * @function handleDragDropEvent
  */
-const handleDragDropEvent = (e: Event) => {
+const handleDragDropEvent = (e: React.DragEvent<HTMLElement>) => {
   e.stopPropagation();
   e.preventDefault();
 };
