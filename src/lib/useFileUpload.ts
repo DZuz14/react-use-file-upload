@@ -27,7 +27,7 @@ const getTotalSizeInBytes = (files: File[]): number => {
 /**
  * @function handleDragDropEvent
  */
-const handleDragDropEvent = (e: Event) => {
+const handleDragDropEvent = (e: React.DragEvent<HTMLElement>) => {
   e.stopPropagation();
   e.preventDefault();
 };
@@ -56,6 +56,7 @@ export const useFileUpload = (): useFileUploadHook => {
 
       if (e.currentTarget?.files) {
         filesArr = Array.from(e.currentTarget.files);
+        e.currentTarget.value = '';
       } else if (e?.dataTransfer.files) {
         filesArr = Array.from(e.dataTransfer.files);
       } else {

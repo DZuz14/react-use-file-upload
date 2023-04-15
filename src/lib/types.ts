@@ -6,7 +6,7 @@ export type useFileUploadHook = {
   totalSizeInBytes: number;
   clearAllFiles: () => void;
   createFormData: () => FormData;
-  handleDragDropEvent: (e: Event) => void;
+  handleDragDropEvent: (e: React.DragEvent<HTMLElement>) => void;
   removeFile: (file: number | string) => void;
-  setFiles: (e: Event, mode?: 'a' | 'w') => void;
+  setFiles: (e: React.ChangeEvent<HTMLInputElement>, mode?: 'a' | 'w') => void;
 };
